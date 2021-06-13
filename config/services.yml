@@ -16,7 +16,7 @@ services:
         class: davidiq\advancedemailtemplates\service
         arguments:
             - '@user'
-            - '%davidiq.advancedemailtemplates.tables.advancedemailtemplates%'
+            - '%davidiq.advancedemailtemplates.tables.emailtemplates%'
 
     davidiq.advancedemailtemplates.listener:
         class: davidiq\advancedemailtemplates\event\main_listener

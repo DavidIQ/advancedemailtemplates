@@ -27,7 +27,7 @@ class service
 	 * @param \phpbb\user $user       User object
 	 * @param string      $table_name The name of a db table
 	 */
-	public function __construct(\phpbb\user $user, $table_name)
+	public function __construct(\phpbb\user $user, string $table_name)
 	{
 		$this->user = $user;
 		$this->table_name = $table_name;

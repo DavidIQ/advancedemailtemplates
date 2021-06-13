@@ -14,7 +14,7 @@ class install_schema extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return $this->db_tools->sql_table_exists($this->table_prefix . 'advancedemailtemplates');
+		return $this->db_tools->sql_table_exists($this->table_prefix . 'emailtemplates');
 	}
 
 	public static function depends_on()
@@ -45,14 +45,14 @@ class install_schema extends \phpbb\db\migration\migration
 	{
 		return [
 			'add_tables'		=> [
-				$this->table_prefix . 'advancedemailtemplates'	=> [
+				$this->table_prefix . 'emailtemplates'	=> [
 					'COLUMNS'		=> [
-						'advancedemailtemplates_id'			=> ['UINT', null, 'auto_increment'],
-						'advancedemailtemplates_purpose_id'	=> ['INT:11', 0],
-                        'advancedemailtemplates_lang_id'    => ['TINT:4', 0],
-                        'advancedemailtemplates_content'    => ['MTEXT', '']
+						'template_id'			=> ['UINT', null, 'auto_increment'],
+						'template_purpose_id'	=> ['INT:11', 0],
+                        'template_lang_id'    => ['TINT:4', 0],
+                        'template_content'    => ['MTEXT', '']
 					],
-					'PRIMARY_KEY'	=> 'advancedemailtemplates_id',
+					'PRIMARY_KEY'	=> 'template_id',
 				],
 			],
 		];
@@ -82,7 +82,7 @@ class install_schema extends \phpbb\db\migration\migration
 	{
 		return [
 			'drop_tables'		=> [
-				$this->table_prefix . 'advancedemailtemplates',
+				$this->table_prefix . 'emailtemplates',
 			],
 		];
 	}
