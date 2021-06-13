@@ -1,0 +1,26 @@
+imports:
+    - { resource: parameters.yml }
+
+services:
+    davidiq.advancedemailtemplates.controller.acp:
+        class: davidiq\advancedemailtemplates\controller\acp_controller
+        arguments:
+            - '@config'
+            - '@language'
+            - '@log'
+            - '@request'
+            - '@template'
+            - '@user'
+
+    davidiq.advancedemailtemplates.service:
+        class: davidiq\advancedemailtemplates\service
+        arguments:
+            - '@user'
+            - '%davidiq.advancedemailtemplates.tables.advancedemailtemplates%'
+
+    davidiq.advancedemailtemplates.listener:
+        class: davidiq\advancedemailtemplates\event\main_listener
+        arguments:
+            - '@language'
+        tags:
+            - { name: event.listener }

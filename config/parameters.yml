@@ -1,0 +1,2 @@
+parameters:
+    davidiq.advancedemailtemplates.tables.advancedemailtemplates: '%core.table_prefix%advancedemailtemplates'
