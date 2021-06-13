@@ -48,7 +48,7 @@ class install_schema extends \phpbb\db\migration\migration
 				$this->table_prefix . 'advancedemailtemplates'	=> [
 					'COLUMNS'		=> [
 						'advancedemailtemplates_id'			=> ['UINT', null, 'auto_increment'],
-						'advancedemailtemplates_name'		=> ['VCHAR:255', ''],
+						'advancedemailtemplates_purpose_id'	=> ['INT:11', 0],
                         'advancedemailtemplates_lang_id'    => ['TINT:4', 0],
                         'advancedemailtemplates_content'    => ['MTEXT', '']
 					],
